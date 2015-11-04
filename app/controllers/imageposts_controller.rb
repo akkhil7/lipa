@@ -1,4 +1,5 @@
 class ImagepostsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :authenticate
   def index
     @images = ImagePost.all
@@ -25,6 +26,6 @@ class ImagepostsController < ApplicationController
 
   private
     def imagepost_params
-      params.require(:image).permit(:image, :user_id)
+      params.require(:imagepost).permit(:image, :user_id)
     end
 end

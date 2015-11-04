@@ -27,6 +27,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def me
+    @user = current_user
+    render json: @user, status: 200
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :password, :email, :first_name, :last_name)

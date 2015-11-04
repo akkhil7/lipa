@@ -14,6 +14,7 @@ class TokensController < ApplicationController
       @user = User.find_by(access_token: params[:token])
       if @user
         render json: {user: @user}, status: 200
+        @@current_user = @user
       end
   end
 
