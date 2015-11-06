@@ -24,6 +24,16 @@ class ImagepostsController < ApplicationController
     end
   end
 
+  def current_images
+    @user = User.find(params[:id])
+    @images = @user.image_posts
+    if(!@user.nil?)
+      render json: @images, status: 200
+    else
+      render text: "No user found", status: 422
+    end
+  end
+
   private
     def imagepost_params
       params.require(:imagepost).permit(:image, :user_id)
