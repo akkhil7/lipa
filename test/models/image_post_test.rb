@@ -2,11 +2,16 @@
 #
 # Table name: image_posts
 #
-#  id         :integer          not null, primary key
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  image      :attachment
-#  user_id    :integer
+#  id                 :integer          not null, primary key
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
+#  account_type       :string
+#  user_id            :integer
+#  category           :string
 #
 
 require 'test_helper'

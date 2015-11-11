@@ -11,6 +11,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem "paperclip", "~> 4.3"
 gem 'active_model_serializers'
+gem 'aws-sdk', '~> 1.6'
+gem 'paperclip-watermark'
 gem 'rack-cors', :require => 'rack/cors'
 group :development, :test do
   gem 'byebug'

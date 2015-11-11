@@ -19,6 +19,7 @@
 #  first_name             :string
 #  last_name              :string
 #  access_token           :string
+#  account_type           :string
 #
 
 require 'test_helper'
