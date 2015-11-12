@@ -17,6 +17,7 @@ gem 'rack-cors', :require => 'rack/cors'
 group :development, :test do
   gem 'byebug'
   gem 'annotate'  
+  gem 'aws-sdk', '~> 1.6'
   gem "better_errors"
   gem 'web-console', '~> 2.0'
   gem 'spring'

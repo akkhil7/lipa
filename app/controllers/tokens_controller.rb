@@ -10,11 +10,13 @@ class TokensController < ApplicationController
     end
   end
 
+  ## Receive token from frontend app and render the current user
+  #if the token is valid
+
   def verify_token
       @user = User.find_by(access_token: params[:token])
       if @user
         render json: {user: @user}, status: 200
-        @@current_user = @user
       end
   end
 
