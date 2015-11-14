@@ -24,11 +24,11 @@ class ImagePost < ActiveRecord::Base
       :original => { :geometry => '800>', :watermark_path => "#{Rails.root}/public/images/button.png" }
     }
 
-    validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
-    def s3_credentials
-      {:bucket => "lipa", :access_key_id => "AKIAJX72HV2DGXF6VQNA",
-       :secret_access_key => "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"}
-    end
+  def s3_credentials
+   {:bucket => "lipa", :access_key_id => "AKIAJNVSIN4AXDYHW4JA",
+    :secret_access_key => "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"}
+  end
 
 end
