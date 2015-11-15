@@ -36,6 +36,6 @@ class ImagepostsController < ApplicationController
 
   private
     def imagepost_params
-      params.require(:imagepost).permit(:image, :user_id)
+      params.require(:imagepost).permit(:image, :desc, :title, :category, :user_id)
     end
 end

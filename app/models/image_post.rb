@@ -16,6 +16,8 @@
 
 class ImagePost < ActiveRecord::Base
   belongs_to :user, foreign_key: :user_id
+  before_create :validate_user
+
   has_attached_file :image, :storage => :s3,
     :s3_credentials => Proc.new{|a| a.instance.s3_credentials },
     :processors => [:watermark],
@@ -30,5 +32,19 @@ class ImagePost < ActiveRecord::Base
    {:bucket => "lipa", :access_key_id => "AKIAJNVSIN4AXDYHW4JA",
     :secret_access_key => "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"}
   end
+
+  private
+    def validate_user
+      if (self.user_id.exists?)
+        user = User.find(user_id)
+        if user.account_type == "amateur" || user.account_type == "pro"
+          return true
+        else
+          return false
+        end
+      else
+        return false
+      end
+    end
 
 end
